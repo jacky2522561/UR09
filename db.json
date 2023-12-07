@@ -1,5 +1,98 @@
 {
-  "users":[{"id":1,"name":"Myra"}],
-  "albums":[],
-  "photos":[]
+  "users": [
+    {
+      "id": 1,
+      "name": "Myra"
+    },
+    {
+      "name": "Earl Weber",
+      "id": 2
+    },
+    {
+      "name": "Jane Hoeger",
+      "id": 3
+    },
+    {
+      "name": "Lester Tromp-Bartoletti",
+      "id": 4
+    },
+    {
+      "name": "Mr. Nicholas Predovic",
+      "id": 5
+    },
+    {
+      "name": "Lindsay Boyle",
+      "id": 6
+    },
+    {
+      "name": "Allan Dickens",
+      "id": 7
+    },
+    {
+      "name": "Mrs. Agnes Murphy",
+      "id": 8
+    },
+    {
+      "name": "Clyde Larkin",
+      "id": 9
+    },
+    {
+      "name": "Frankie Deckow",
+      "id": 10
+    },
+    {
+      "name": "Shelia Dietrich",
+      "id": 11
+    },
+    {
+      "name": "Donna Bechtelar I",
+      "id": 12
+    },
+    {
+      "name": "Milton Beier",
+      "id": 13
+    },
+    {
+      "name": "Dr. Ebony Kris MD",
+      "id": 14
+    },
+    {
+      "name": "Carol Morar",
+      "id": 15
+    },
+    {
+      "name": "Jared Sawayn",
+      "id": 16
+    },
+    {
+      "name": "Kelli Douglas",
+      "id": 17
+    },
+    {
+      "name": "Roosevelt Flatley",
+      "id": 18
+    },
+    {
+      "name": "Guy Runolfsson V",
+      "id": 19
+    },
+    {
+      "name": "Jeffrey Ryan",
+      "id": 20
+    },
+    {
+      "name": "Ignacio Maggio",
+      "id": 21
+    },
+    {
+      "name": "Victor Davis-Dicki",
+      "id": 22
+    },
+    {
+      "name": "Kelvin Altenwerth Sr.",
+      "id": 23
+    }
+  ],
+  "albums": [],
+  "photos": []
 }

@@ -1,25 +1,46 @@
 import { useEffect } from "react";
-import {useDispatch,useSelector} from 'react-redux';
-import { fetchUser } from "../store";
+import { useSelector } from 'react-redux';
+import { fetchUser, addUser } from "../store";
+import { useThunk } from "../hooks.js/useThunk";
+import Button from './Button';
 import Skeleton from "./Skeleton";
-const UserList = () =>{
-    const {data,isLoading,error} = useSelector((state)=>{
+import UserListItem from "./UserListItem";
+
+const UserList = () => {
+    const [doFetchUsers, isLoadingUsers, loadingUsersError] = useThunk(fetchUser);
+    const [doCreateUser, isCreatingUser, creatingUserError] = useThunk(addUser);
+
+    const { data } = useSelector((state) => {
         return state.users;
     });
-    const dispatch = useDispatch();
-    useEffect(()=>{
-        dispatch(fetchUser());
-    },[dispatch]);
-    if(isLoading){
-        return <Skeleton time={6} className='h-10 w-full'/>
+    useEffect(() => {
+        doFetchUsers();
+    }, [doFetchUsers]);
+
+    const handleClick = () => {
+        doCreateUser();
+    };
+
+    let content;
+    if (isLoadingUsers) {
+        content = <Skeleton times={6} className="h-10 w-full" />
     }
-    if(error){
-        return <div>Error!!!!!1</div>
+    else if (loadingUsersError) {
+        content = <div>Error fetching data...</div>
     }
-    
-    return(
+    else {
+        <UserListItem user={data}/>
+    }
+
+
+    return (
         <div>
-            {data.length}
+            <div className="flex flex-row justify-between items-center m-3">
+                <h1 className="m-2 text-xl">Users</h1>
+                <Button loading={isCreatingUser} onClick={handleClick}>+ ADD User</Button>
+                {creatingUserError && 'error creating user'}
+            </div>
+            {content}
         </div>
     )
 }
